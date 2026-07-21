@@ -362,7 +362,7 @@
                         <h3 class="text-2xl font-bold text-slate-900">Primary Persona</h3>
                     </div>
                     <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
-                        <iframe src="persona-solution-bv.html#detailed-persona" title="Primary Persona" class="embedded-doc" loading="lazy"></iframe>
+                        <iframe src="primary-persona.html" title="Primary Persona" class="embedded-doc" loading="lazy"></iframe>
                     </div>
                 </section>
 
@@ -373,7 +373,7 @@
                         <h3 class="text-2xl font-bold text-slate-900">Business Goals &amp; Product Objectives Alignment</h3>
                     </div>
                     <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
-                        <iframe src="persona-solution-bv.html#business-goals" title="Business Goals & Product Objectives Alignment" class="embedded-doc" loading="lazy"></iframe>
+                        <iframe src="business-goals-alignment.html" title="Business Goals & Product Objectives Alignment" class="embedded-doc" loading="lazy"></iframe>
                     </div>
                 </section>
 
@@ -384,7 +384,7 @@
                         <h3 class="text-2xl font-bold text-slate-900">Initial Cost-Benefit Analysis (CBA) &amp; Prioritization</h3>
                     </div>
                     <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
-                        <iframe src="persona-solution-bv.html#cba-prioritization" title="Cost-Benefit Analysis & Prioritization" class="embedded-doc" loading="lazy"></iframe>
+                        <iframe src="cba-prioritization.html" title="Cost-Benefit Analysis & Prioritization" class="embedded-doc" loading="lazy"></iframe>
                     </div>
                 </section>
 
@@ -793,22 +793,10 @@ Transforms reactive customer management into proactive revenue protection.}}
         function resizeEmbeddedDoc(iframe) {
             try {
                 const doc = iframe.contentWindow.document;
-                const src = iframe.getAttribute('src') || '';
-                const hashIdx = src.indexOf('#');
-                let targetEl = null;
-                if (hashIdx !== -1) {
-                    targetEl = doc.getElementById(src.slice(hashIdx + 1));
-                }
-                let height;
-                if (targetEl) {
-                    height = targetEl.scrollHeight || targetEl.offsetHeight;
-                    targetEl.scrollIntoView({ block: 'start' });
-                } else {
-                    height = Math.max(
-                        doc.body ? doc.body.scrollHeight : 0,
-                        doc.documentElement ? doc.documentElement.scrollHeight : 0
-                    );
-                }
+                const height = Math.max(
+                    doc.body ? doc.body.scrollHeight : 0,
+                    doc.documentElement ? doc.documentElement.scrollHeight : 0
+                );
                 if (height) {
                     iframe.style.height = (height + 24) + 'px';
                 }
